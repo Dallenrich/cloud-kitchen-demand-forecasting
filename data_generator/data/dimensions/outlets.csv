@@ -1,0 +1,9 @@
+outlet_id,outlet_name,city,size_factor
+1,Adyar,Chennai,1.3
+2,T Nagar,Chennai,1.1
+3,Indiranagar,Bengaluru,1.4
+4,Koramangala,Bengaluru,1.2
+5,Banjara Hills,Hyderabad,1.25
+6,Andheri,Mumbai,1.5
+7,Koregaon Park,Pune,0.9
+8,Sector 29,Gurugram,1.15
