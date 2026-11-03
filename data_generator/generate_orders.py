@@ -75,7 +75,6 @@ def build_weather(days, cities, rng):
             "rain_flag": rain.astype(int), "temp_c": temp.round(1)}))
     return pd.concat(frames, ignore_index=True)
 
-
 def event_multiplier(cal, dishes):
     """Festival effect, shape (days, dishes)."""
     k = len(dishes)
@@ -98,7 +97,6 @@ def event_multiplier(cal, dishes):
     nye = ((cal["date"].dt.month == 12) & (cal["date"].dt.day == 31)).values
     apply(nye, np.full(k, 1.4))
     return mult
-
 
 def inject_problems(df, rng):
     """Add realistic data-quality problems for the Silver layer to fix."""
@@ -123,6 +121,7 @@ def generate(start, end, dims_dir, out_dir, truth_dir, seed):
     weather = build_weather(days, outlets["city"].unique(), rng)
     d_n, o_n, k_n, h_n = len(cal), len(outlets), len(dishes), len(HOURS)
 
+    
     # rain flag per (day, outlet)
     rain = np.zeros((d_n, o_n))
     for j, city in enumerate(outlets["city"]):
