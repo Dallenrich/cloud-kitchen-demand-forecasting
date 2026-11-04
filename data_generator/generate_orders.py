@@ -222,6 +222,7 @@ def generate(start, end, dims_dir, out_dir, truth_dir, seed):
     print(f"Duplicates injected (approx 1 percent), late rows: {int(late.sum()):,}")
 
 
+    
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--start", default="2024-01-01")
