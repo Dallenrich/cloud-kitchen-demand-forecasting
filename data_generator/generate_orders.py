@@ -209,6 +209,7 @@ def generate(start, end, dims_dir, out_dir, truth_dir, seed):
     cal.to_csv(dims / "calendar_events.csv", index=False)
     weather.to_csv(dims / "weather_sim.csv", index=False)
 
+    
     truth = pd.DataFrame({
         "date": np.repeat(cal["date"].values, o_n * k_n),
         "outlet_id": np.tile(np.repeat(outlets["outlet_id"].values, k_n), d_n),
@@ -220,7 +221,6 @@ def generate(start, end, dims_dir, out_dir, truth_dir, seed):
 
     print(f"Order rows written: {len(orders):,} across {files} daily files -> {out}")
     print(f"Duplicates injected (approx 1 percent), late rows: {int(late.sum()):,}")
-
 
     
 if __name__ == "__main__":
